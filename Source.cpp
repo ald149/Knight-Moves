@@ -1,10 +1,5 @@
 /**
-Name: Andrew Darby
-PSU ID: ald149
-Course : CMPSC 465
-Due: 10/10/2021
-Last Modified:
-Description:
+Author: Andrew Darby
 
 **/
 
@@ -41,7 +36,7 @@ int main()
 
 
 
-	inFile.open(readFile);	            // open proj3 input file for X and O matrix
+	inFile.open(readFile);	            // open input file for X and O matrix
 	if (inFile)				            // test success of file open
 		cout << "file opened." << endl << endl;
 
@@ -55,11 +50,11 @@ int main()
 			visited[i][j] = 0;
 		}
 
-		x1= convertToInt(a);
-		y1 = b - 48;
+		x1= convertToInt(a);	//converts char to int
+		y1 = b - 48;		//converts char to int
 
-		x2 = convertToInt(c);
-		y2 = d - 48;
+		x2 = convertToInt(c);	//converts char to int
+		y2 = d - 48;		//converts char to int
 
 
 		
@@ -73,6 +68,7 @@ int main()
 	return 0;
 }
 
+//method tests validity of move
 bool validMove(int x, int y)
 {
 	if (x < 1 || x > 8 || y < 1 || y > 8)
@@ -84,14 +80,15 @@ bool validMove(int x, int y)
 	return true;
 }
 
+//method converts char input to int 
 int convertToInt(char a)
 {
 	int c = a - 'a' + 1;
 	return c;
 
-}
+}// end method convertToInt
 
-
+//method computes # of moves from start to finish point
 int computeMoves(int x, int y)
 {
 	queue<pair<int, int>> moves;
